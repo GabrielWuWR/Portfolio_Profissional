@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;700&display=swap');
+
+:root {
+    --corBackground: #0a131a; 
+    --corPrincipal: #12222d; 
+    --corMikuCiano: #00f2fe;
+    --corMikuRosa: #E12885;
+    --corHeader: rgba(10, 19, 26, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.divisao {
+    background-color: var(--corPrincipal); 
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30vh;
+    z-index: 5; 
+    border: none;
+}
+
+.bolhasContainer {
+    position: absolute;
+    width: 100%;
+    margin-top: 30vh;
+    height: calc(100% - 30vh);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bolha {
+    width: 30px;
+    height: 30px;
+    background-color: var(--corPrincipal);
+    border-radius: 50%;
+    animation: bolhaAnimacao 20s ease-in-out infinite;
+    position: absolute;
+    pointer-events: none;
+    opacity: 1;
+    top: -30px;
+}
+
+@keyframes bolhaAnimacao {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--corBackground);
+}
+
+header {
+    background-color: var(--corHeader);
+    height: 80px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 0px 3vh;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 2px solid var(--corMikuCiano);
+    border-top: 1px solid var(--corMikuRosa);
+
+    box-shadow:
+        inset 0px 2px 4px rgba(225, 40, 133, 0.5),
+        inset 0px -10px 20px rgba(0, 0, 0, 0.6),
+        inset 0px -3px 12px rgba(57, 197, 187, 0.6),
+        0px 6px 20px rgba(57, 197, 187, 0.35),
+        0px 15px 30px rgba(0, 0, 0, 0.5);
+
+    z-index: 10;
+    position: relative;
+}
+
+header img {
+    width: 200px;
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
+    pointer-events: none;
+}
+
+header ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header ul li {
+    font-family: 'Baloo Thambi 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e0fbfc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
