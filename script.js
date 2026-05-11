@@ -21,3 +21,13 @@ function criarBolha() {
 }
 
 setInterval(criarBolha, 400);
+
+function avancarCarrosel() {
+    let trilho = document.querySelector('.trilhoCarrossel');
+    trilho.style.transform = "translateX(-100%)";
+}
+
+function voltarCarrosel() {
+    let trilho = document.querySelector('.trilhoCarrossel');
+    trilho.style.transform = "translateX(0)";
+}

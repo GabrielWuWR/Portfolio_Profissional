@@ -148,7 +148,7 @@ header ul li {
     gap: 3vh;
     justify-content: center;
     padding: 5vh 8vh;
-    overflow: hidden;
+    position: relative;
 }
 
 .containerCarrossel button {
@@ -160,6 +160,15 @@ header ul li {
     color: var(--corTexto);
     transition: .2s ease-in;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999999;
+}
+
+.visuaizacaoCarrosel {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 #carrosel-btn-esquerdo {
@@ -179,28 +188,24 @@ header ul li {
 .trilhoCarrossel {
     display: flex;
     transition: .4s ease;
+    width: 100%;
 }
 
 .itemCarrossel {
+    width: 100%;
     min-width: 100%;
+    max-width: 100%;
     display: flex;
     gap: 3vh;
     flex-shrink: 0;
 }
 
-.itemCarrossel {
-    display: flex;
-    width: 100%;
-    gap: 3vh;
-}
-
 .imgCarrossel {
     background-image: url('./img/image-test.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    width: 80vh;
-    min-width: 200px;
+    width: 40%;
+    min-width: 300px;
     height: 50vh;
     border-radius: 30px;
     box-shadow: var(--sombraInvertida);
@@ -220,6 +225,7 @@ header ul li {
     justify-content: space-between;
     gap: 2vh;
     padding: 3vh 0px;
+    overflow: hidden;
 }
 
 .containerTags {
