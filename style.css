@@ -1,30 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;700&display=swap');
 
 :root {
-    --corBackground: #0a131a; 
-    --corPrincipal: #12222d; 
+    --corBackground: #0a131a;
+    --corPrincipal: #12222d;
     --corMikuCiano: #00f2fe;
     --corMikuRosa: #E12885;
     --corHeader: rgba(10, 19, 26, 0.7);
+    --corTexto: #e0fbfc;
+    --sombraInvertida: inset 0px 2px 4px rgba(57, 197, 187, 0.6),
+        inset 0px -10px 20px rgba(0, 0, 0, 0.6),
+        inset 0px -3px 12px rgba(225, 40, 133, 0.5),
+        0px 6px 20px rgba(225, 40, 133, 0.35),
+        0px 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Baloo Thambi 2', sans-serif;
+    color: var(--corTexto);
+    text-decoration: none;
+}
+
+.containerEstilo {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--corMikuCiano);
+    border-top: 1px solid var(--corMikuRosa);
+    box-shadow:
+        inset 0px 2px 4px rgba(225, 40, 133, 0.5),
+        inset 0px -10px 20px rgba(0, 0, 0, 0.6),
+        inset 0px -3px 12px rgba(57, 197, 187, 0.6),
+        0px 6px 20px rgba(57, 197, 187, 0.35),
+        0px 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* BACKGROUND */
 
 .divisao {
-    background-color: var(--corPrincipal); 
+    background-color: var(--corPrincipal);
     position: absolute;
     top: 0;
     width: 100%;
     height: 30vh;
-    z-index: 5; 
+    z-index: 5;
     border: none;
-
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -32,7 +53,7 @@
 }
 
 .divisao img {
-    height: 60%; 
+    height: 60%;
     display: block;
     pointer-events: none;
 }
@@ -62,7 +83,6 @@
     0% {
         transform: translateY(0);
     }
-
     100% {
         transform: translateY(100vh);
     }
@@ -89,18 +109,6 @@ header {
     margin-top: 20px;
     border-radius: 30px;
     padding: 0px 3vh;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border-bottom: 2px solid var(--corMikuCiano);
-    border-top: 1px solid var(--corMikuRosa);
-
-    box-shadow:
-        inset 0px 2px 4px rgba(225, 40, 133, 0.5),
-        inset 0px -10px 20px rgba(0, 0, 0, 0.6),
-        inset 0px -3px 12px rgba(57, 197, 187, 0.6),
-        0px 6px 20px rgba(57, 197, 187, 0.35),
-        0px 15px 30px rgba(0, 0, 0, 0.5);
 
     z-index: 10;
     position: relative;
@@ -116,19 +124,132 @@ header ul {
     display: flex;
     gap: 40px;
     list-style: none;
-    
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
 header ul li {
-    font-family: 'Baloo Thambi 2', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #e0fbfc;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 /* CARROSSEL */
+.containerCarrossel {
+    width: 80%;
+    height: 70vh;
+    z-index: 999;
+    margin-top: 5vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    justify-content: center;
+    padding: 5vh 8vh;
+    overflow: hidden;
+}
+
+.containerCarrossel button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--corHeader);
+    color: var(--corTexto);
+    transition: .2s ease-in;
+    position: absolute;
+}
+
+#carrosel-btn-esquerdo {
+    left: -25px;
+}
+
+#carrosel-btn-direito {
+    right: -25px;
+}
+
+.containerCarrossel button:hover {
+    cursor: pointer;
+    color: var(--corMikuRosa);
+    box-shadow: var(--sombraInvertida);
+}
+
+.trilhoCarrossel {
+    display: flex;
+    transition: .4s ease;
+}
+
+.itemCarrossel {
+    min-width: 100%;
+    display: flex;
+    gap: 3vh;
+    flex-shrink: 0;
+}
+
+.itemCarrossel {
+    display: flex;
+    width: 100%;
+    gap: 3vh;
+}
+
+.imgCarrossel {
+    background-image: url('./img/image-test.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80vh;
+    min-width: 200px;
+    height: 50vh;
+    border-radius: 30px;
+    box-shadow: var(--sombraInvertida);
+}
+
+.barra {
+    box-shadow: var(--sombraInvertida);
+    border: 1px solid var(--corMikuRosa);
+    height: 50vh;
+    margin: 0vh 3vh;
+}
+
+.projetoCarroselInfos {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    gap: 2vh;
+    padding: 3vh 0px;
+}
+
+.containerTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vh;
+    margin-top: 2vh;
+}
+
+.tag {
+    border: 1px solid var(--corTexto);
+    background-color: var(--corTexto);
+    color: var(--corBackground);
+    border-radius: 50px;
+    padding: 0px 1vh;
+    font-size: 14px;
+}
+
+.botao-git {
+    width: 23vh;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vh;
+    padding: 0px 5vh;
+}
+
+.botao-git:hover {
+    cursor: pointer;
+}
