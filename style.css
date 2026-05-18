@@ -452,3 +452,225 @@ h2.texto-impacto {
     text-transform: uppercase;
     margin-bottom: 10px;
 }
+
+/* SEÇÃO CARDS */
+
+.secao-cards {
+    width: 100%;
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: transparent;
+}
+
+.cards-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.cards-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--corTexto);
+}
+
+.view-all {
+    font-size: 0.9rem;
+    color: var(--corMikuRosa);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.cards-thumb {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.cards-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cards-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--corMikuCiano);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cards-tags {
+    font-size: 0.75rem;
+    color: var(--corMikuRosa);
+    margin: 4px 0;
+}
+
+.cards-desc {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.janela-projeto {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 15px);
+    width: 320px;
+    background-color: var(--corPrincipal); 
+    border: 1px solid rgba(57, 197, 187, 0.2);
+    box-shadow: var(--sombraSuave);
+    border-radius: 20px;
+    padding: 15px;
+    z-index: 100;
+    flex-direction: column;
+    gap: 12px;
+    cursor: default;
+}
+
+.janela-projeto::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: -11px;
+    border-width: 6px 11px 6px 0;
+    border-style: solid;
+    border-color: transparent var(--corPrincipal) transparent transparent;
+}
+
+.card-item:hover .janela-projeto {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.janela-projeto.show-left {
+    left: auto;
+    right: calc(100% + 15px);
+    transform: translateX(10px);
+}
+
+.card-item:hover .janela-projeto.show-left {
+    transform: translateX(0);
+}
+
+.janela-projeto.show-left::before {
+    left: auto;
+    right: -11px;
+    border-width: 6px 0 6px 11px;
+    border-color: transparent transparent transparent var(--corPrincipal);
+}
+
+.janela-projeto.show-top {
+    top: auto;
+    bottom: -10px;
+}
+
+.janela-projeto.show-top::before {
+    top: auto;
+    bottom: 25px;
+}
+
+.janela-projeto-titulo {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--corMikuCiano);
+    line-height: 1.2;
+}
+
+.janela-projeto-desc {
+    font-size: 0.85rem;
+    color: var(--corTexto);
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+.janela-projeto-imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.janela-projeto-imagens img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.janela-projeto-btn {
+    background-color: transparent;
+    border: 1px solid var(--corMikuRosa);
+    color: var(--corMikuRosa);
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 5px;
+}
+
+.janela-projeto-btn:hover {
+    background-color: var(--corMikuRosa);
+    color: #fff;
+    box-shadow: 0px 4px 15px rgba(225, 40, 133, 0.3);
+}
+
+.janela-projeto-imagens img:nth-child(2) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition-delay: 0.1s;
+}
+
+.card-item:hover .janela-projeto-imagens img:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -184,6 +184,107 @@ document.getElementById('carrosel-btn-esquerdo')?.addEventListener('click', () =
     iniciarAutoplay();
 });
 
+function carregarGridCards() {
+    const grid = document.getElementById('grid-projetos-estatico');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    projetosCards.forEach(projeto => {
+        const card = document.createElement('div');
+        card.classList.add('card-item');
+
+        const thumb = document.createElement('div');
+        thumb.classList.add('cards-thumb');
+        thumb.style.backgroundImage = `url('${projeto.imagem}')`;
+
+        const badge = document.createElement('div');
+        badge.classList.add('cards-badge');
+        badge.textContent = 'WEB'; 
+        thumb.appendChild(badge);
+
+        const info = document.createElement('div');
+        info.classList.add('cards-info');
+
+        const titulo = document.createElement('h3');
+        titulo.textContent = projeto.nome;
+
+        const tags = document.createElement('div');
+        tags.classList.add('cards-tags');
+        tags.textContent = projeto.tags.map(t => `#${t.replace(/\s+/g, '')}`).join(', ');
+
+        const desc = document.createElement('p');
+        desc.classList.add('cards-desc');
+        desc.textContent = projeto.descricao;
+
+        info.appendChild(titulo);
+        info.appendChild(tags);
+        info.appendChild(desc);
+
+        card.appendChild(thumb);
+        card.appendChild(info);
+
+        card.onclick = (e) => {
+            if (!e.target.closest('.janela-projeto')) {
+                window.open(projeto.repositorio, '_blank');
+            }
+        };
+
+        const janelaProjeto = document.createElement('div');
+        janelaProjeto.classList.add('janela-projeto');
+
+        const janelaTitulo = document.createElement('div');
+        janelaTitulo.classList.add('janela-projeto-titulo');
+        janelaTitulo.textContent = projeto.nome; 
+
+        const janelaDesc = document.createElement('div');
+        janelaDesc.classList.add('janela-projeto-desc');
+        janelaDesc.textContent = projeto.descricao; 
+
+        const janelaImagens = document.createElement('div');
+        janelaImagens.classList.add('janela-projeto-imagens');
+
+        if (projeto['imagens-janela'] && Array.isArray(projeto['imagens-janela'])) {
+            projeto['imagens-janela'].forEach(srcImagem => {
+                const imgJanela = document.createElement('img');
+                imgJanela.src = srcImagem; 
+                janelaImagens.appendChild(imgJanela);
+            });
+        }
+
+        const janelaBtn = document.createElement('button');
+        janelaBtn.classList.add('janela-projeto-btn');
+        janelaBtn.innerHTML = 'Ver Repositório';
+        janelaBtn.onclick = () => window.open(projeto.repositorio, '_blank');
+
+        janelaProjeto.appendChild(janelaTitulo);
+        janelaProjeto.appendChild(janelaDesc);
+        janelaProjeto.appendChild(janelaImagens);
+        janelaProjeto.appendChild(janelaBtn);
+
+        card.appendChild(janelaProjeto);
+
+        card.addEventListener('mouseenter', () => {
+            const rect = card.getBoundingClientRect();
+
+            if (window.innerWidth - rect.right < 340) {
+                janelaProjeto.classList.add('show-left');
+            } else {
+                janelaProjeto.classList.remove('show-left');
+            }
+
+            if (window.innerHeight - rect.top < 450) {
+                janelaProjeto.classList.add('show-top');
+            } else {
+                janelaProjeto.classList.remove('show-top');
+            }
+        });
+
+        grid.appendChild(card);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     carregarProjetos();
+    carregarGridCards();
 });
