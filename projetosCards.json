@@ -1,29 +1,29 @@
 [
     {
-        "nome": "Teste1",
-        "descricao": "esfdfsdfdfcvxvxcvxvxcvxcvxcvxcvcxcvxfdddddd dddddddddddddddddddddd ddddddddddddddddxcxcx dddddddddddd",
-        "imagem": "./img/image-test.jpg",
-        "imagens-janela": ["./img/image-test.jpg", "./img/image-test.jpg"],
+        "nome": "Site vendas",
+        "descricao": "Site de vendas de produtos eletronicos com tema glassmorphism",
+        "imagem": "./img/img4.png",
+        "imagens-janela": ["./img/img5.png", "./img/img6.png"],
         "tags": ["Front-End", "Node-js"],
         "categoria": "WEB",
-        "repositorio": "#"
+        "repositorio": "https://github.com/GabrielWuW/Site-Vendas"
     },
     {
-        "nome": "Teste2",
-        "descricao": "Descrição do teste 2 aqui.",
-        "imagem": "./img/image-test.jpg",
-        "imagens-janela": ["./img/image-test.jpg", "./img/image-test.jpg"],
+        "nome": "Tony Pizzaria",
+        "descricao": "Site de venda para uma pizzaria.",
+        "imagem": "./img/img7.png",
+        "imagens-janela": ["./img/img8.png", "./img/img9.png"],
         "categoria": "WEB",
         "tags": ["Front-End"],
-        "repositorio": "#"
+        "repositorio": "https://github.com/GabrielWuW/tony-pizzaria"
     },
     {
-        "nome": "Teste3",
-        "descricao": "Descrição do teste 3 aqui.",
-        "imagem": "./img/image-test.jpg",
-        "imagens-janela": ["./img/image-test.jpg", "./img/image-test.jpg"],
+        "nome": "Api estados e cidades",
+        "descricao": "Api que lista estados, cidades e capitais do Brasil.",
+        "imagem": "./img/img10.png",
+        "imagens-janela": ["./img/img11.png", "./img/img12.png"],
         "categoria": "WEB",
-        "tags": ["Back-End", "Banco de Dados"],
-        "repositorio": "#"
+        "tags": ["Back-End"],
+        "repositorio": "https://github.com/GabrielWuWR/BackEnd-API-Estados-Cidades"
     }
 ]

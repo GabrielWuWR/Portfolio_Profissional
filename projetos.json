@@ -1,24 +1,24 @@
 [
     {
-        "nome": "Teste1",
-        "descricao": "esfdfsdfdfcvxvxcvxvxcvxcvxcvxcvcxcvxfdddddd dddddddddddddddddddddd ddddddddddddddddxcxcx dddddddddddd",
-        "imagem": "./img/image-test.jpg",
-        "tags": ["Front-End", "Node-js"],
-        "repositorio": "#"
+        "nome": "API Diário do caçador",
+        "descricao": "Api que lista todos os monstros encontrados no diário do caçador do jogo hollow Knight.",
+        "imagem": "./img/img1.png",
+        "tags": ["Node-js"],
+        "repositorio": "https://github.com/GabrielWuW/Diario-do-cacador-API"
     },
     {
-        "nome": "Teste2",
-        "descricao": "Descrição do teste 2 aqui.",
-        "imagem": "./img/image-test.jpg",
+        "nome": "Site de músicas",
+        "descricao": "Site desenvolvido utilizando a api musical Jamendo.",
+        "imagem": "./img/img2.png",
         "tags": ["Front-End"],
-        "repositorio": "#"
+        "repositorio": "https://github.com/GabrielWuW/Site-Musicas"
     },
     {
-        "nome": "Teste3",
-        "descricao": "Descrição do teste 3 aqui.",
-        "imagem": "./img/image-test.jpg",
-        "tags": ["Back-End", "Banco de Dados"],
-        "repositorio": "#"
+        "nome": "Dog search",
+        "descricao": "Site desenvolvido usando a Dog api para listar raças de cachorros.",
+        "imagem": "./img/img3.png",
+        "tags": ["Front-End"],
+        "repositorio": "https://github.com/GabrielWuW/API-CACHORROS"
     }
 ]
 

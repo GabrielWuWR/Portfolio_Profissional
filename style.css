@@ -18,6 +18,10 @@
         inset 0px 0px 10px rgba(57, 197, 187, 0.05);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
