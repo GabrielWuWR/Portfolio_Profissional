@@ -674,3 +674,121 @@ h2.texto-impacto {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Rodape */
+
+.rodape {
+    width: 100%;
+    background-color: var(--corPrincipal);
+    position: relative;
+    margin-top: 80px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.rodape-linha-brilho {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--corMikuCiano), var(--corMikuRosa));
+    box-shadow: 0 0 15px rgba(57, 197, 187, 0.4);
+}
+
+.rodape-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.rodape-info h2 {
+    font-size: 1.8rem;
+    color: var(--corTexto);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.rodape-info p {
+    font-size: 1rem;
+    color: rgba(240, 244, 248, 0.7);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.rodape-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--corTexto);
+    font-size: 1.4rem;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn:hover {
+    background-color: rgba(57, 197, 187, 0.1);
+    border-color: var(--corMikuCiano);
+    color: var(--corMikuCiano);
+    box-shadow: 0 10px 20px rgba(57, 197, 187, 0.2);
+}
+
+.social-btn:nth-child(even):hover {
+    background-color: rgba(225, 40, 133, 0.1);
+    border-color: var(--corMikuRosa);
+    color: var(--corMikuRosa);
+    box-shadow: 0 10px 20px rgba(225, 40, 133, 0.2);
+}
+
+.social-btn i {
+    transition: color 0.3s ease;
+    color: inherit; 
+}
+
+.rodape-creditos {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.rodape-creditos p {
+    font-size: 0.85rem;
+    color: rgba(240, 244, 248, 0.5);
+}
+
+.coracao {
+    color: var(--corMikuRosa);
+    display: inline-block;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

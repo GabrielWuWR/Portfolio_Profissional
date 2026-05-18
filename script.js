@@ -200,7 +200,7 @@ function carregarGridCards() {
 
         const badge = document.createElement('div');
         badge.classList.add('cards-badge');
-        badge.textContent = 'WEB'; 
+        badge.textContent = projeto.categoria; 
         thumb.appendChild(badge);
 
         const info = document.createElement('div');

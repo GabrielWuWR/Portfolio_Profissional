@@ -5,6 +5,7 @@
         "imagem": "./img/image-test.jpg",
         "imagens-janela": ["./img/image-test.jpg", "./img/image-test.jpg"],
         "tags": ["Front-End", "Node-js"],
+        "categoria": "WEB",
         "repositorio": "#"
     },
     {
@@ -12,6 +13,7 @@
         "descricao": "Descrição do teste 2 aqui.",
         "imagem": "./img/image-test.jpg",
         "imagens-janela": ["./img/image-test.jpg", "./img/image-test.jpg"],
+        "categoria": "WEB",
         "tags": ["Front-End"],
         "repositorio": "#"
     },
@@ -20,8 +22,8 @@
         "descricao": "Descrição do teste 3 aqui.",
         "imagem": "./img/image-test.jpg",
         "imagens-janela": ["./img/image-test.jpg", "./img/image-test.jpg"],
+        "categoria": "WEB",
         "tags": ["Back-End", "Banco de Dados"],
         "repositorio": "#"
     }
 ]
-
