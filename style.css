@@ -400,12 +400,6 @@ header ul li {
     transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-.sobreMimImagem img:hover {
-    transform: scale(1.05) rotate(2deg);
-    border-color: var(--corMikuCiano);
-    box-shadow: 0px 0px 25px rgba(57, 197, 187, 0.5);
-}
-
 .sobreMimTexto {
     display: flex;
     flex-direction: column;
